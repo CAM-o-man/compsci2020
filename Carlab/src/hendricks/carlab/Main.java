@@ -3,7 +3,13 @@ package hendricks.carlab;
 public class Main {
 
     public static void main(String[] args) {
-        //implement car
+        Car car = new Car(50);
+        car.addFuel(50);
+        if (car.drive(500)) {
+            System.out.println("successfully driven");
+        } else {
+            System.out.println("failed to drive; not enough fuel");
+        }
     }
 }
 
@@ -66,6 +72,9 @@ class Car {
         if (miles/pergallon <= fuel) {
             fuel -= miles/pergallon;
             mileage += miles;
+            return true;
+        } else {
+            return false;
         }
     }
 }
