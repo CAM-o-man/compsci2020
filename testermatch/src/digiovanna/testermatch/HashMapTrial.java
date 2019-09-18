@@ -1,7 +1,6 @@
 package digiovanna.testermatch;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -70,15 +69,35 @@ public class HashMapTrial {
         int usr = input.nextInt();
         if (usr == 1) {
             if (robin != null) {
-                printer(pairs, robin);
+                try {
+                    printer(pairs, robin);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.exit(-1);
+                }
             } else {
-                printer(pairs);
+                try {
+                    printer(pairs);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.exit(-1);
+                }
             }
         } else if (usr == 2) {
             if (robin != null) {
-                printer(pairs, robin);
+                try {
+                    printer(pairs, robin);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.exit(-1);
+                }
             } else {
-                printer(pairs);
+                try {
+                    printer(pairs);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.exit(-1);
+                }
             }
         } else {
             System.out.println("I'm afraid that's an illegal input.");
@@ -150,11 +169,15 @@ public class HashMapTrial {
      * Prints the provided {@see Map},
      * @param pairs The map to be printed
      */
-    public static void printer(Map pairs) {
+    public static void printer(Map pairs) throws IOException {
         TreeMap<String, String> sorted = new TreeMap<String, String>(pairs);
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File("output.txt")));
         for (int i = 0; i < sorted.size(); i++) {
             System.out.println("Coder --------------- Tester");
+            writer.write("Coder --------------- Tester\n");
             System.out.printf("%s ------------------- %s\n", sorted.keySet().toArray()[i], sorted.values().toArray()[i]);
+            writer.write(String.format("%s ------------------- %s\n", sorted.keySet().toArray()[i], sorted.values().toArray()[i]));
+
         }
     }
 
@@ -163,18 +186,24 @@ public class HashMapTrial {
      * @param pairs The {@see Map} to be printed
      * @param robin An {@see ArrayList} containing a round-robin group.
      */
-    public static void printer(Map pairs, ArrayList<String> robin) {
+    public static void printer(Map pairs, ArrayList<String> robin) throws IOException {
         Object[] temp = pairs.values().toArray();
         Object[] temp2 = pairs.values().toArray();
         TreeMap<Object, Object> sorted = new TreeMap<Object, Object>();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File("output.txt")));
         for (int i = 0; i < temp.length; i++) {
             sorted.put(temp[i], temp2[i]);
         }
         for (int i = 0; i < sorted.size(); i++) {
             System.out.println("Coder --------------- Tester");
-            System.out.printf("%s ------------------ %s\n", sorted.keySet().toArray()[i], sorted.values().toArray()[i]);
+            String out = String.format("%s ------------------ %s\n", sorted.keySet().toArray()[i], sorted.values().toArray()[i]);
+            System.out.print(out);
+            writer.write("Coder --------------- Tester\n");
+            writer.write(out);
+
         }
         System.out.printf("Round Robin: %s, %s and %s\n", robin.get(0), robin.get(1), robin.get(2));
+        writer.write(String.format("Round Robin: %s, %s and %s\n", robin.get(0), robin.get(1), robin.get(2)));
     }
 
     /**
