@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59179a44-5517-47b0-a640-b39140c8bb2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../employeelab/src/hendricks/employee/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../television/src/hendricks/television/Television.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/Browse.VC.opendb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppdatabasics2/cppdatabasics2/cppdatabasics2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cppdatabasics2/cppdatabasics2/cppdatabasics2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/coders.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/digiovanna/testermatch/HashMapTrial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/digiovanna/testermatch/HashMapTrial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/digiovanna/testermatch/Student.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +110,8 @@
       <workItem from="1568383585650" duration="5156000" />
       <workItem from="1568727236095" duration="140000" />
       <workItem from="1568727688880" duration="985000" />
-      <workItem from="1568823822483" duration="813000" />
+      <workItem from="1568823822483" duration="984000" />
+      <workItem from="1568832399379" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="Added docs and finished lab">
       <created>1568235575668</created>
@@ -121,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568235575668</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completed labs, including new cpp labs">
+      <created>1568831770101</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568831770101</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +148,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added docs and finished lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added docs and finished lab" />
+    <MESSAGE value="Completed labs, including new cpp labs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed labs, including new cpp labs" />
   </component>
 </project>
