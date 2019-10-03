@@ -2,59 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc1be150-c991-46ad-814e-0cbc3a4790ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../testermatch/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testermatch/src/digiovanna/testermatch/HashMapTrial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testermatch/src/digiovanna/testermatch/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hendricks/carlab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hendricks/carlab/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testermatch/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testermatch/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testermatch/src/digiovanna/testermatch/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/.vs/Hello World/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/.vs/Hello World/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/.vs/Hello World/v15/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/.vs/Hello World/v15/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Debug/Hello World.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Debug/Hello World.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Debug/Hello World.ilk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Debug/Hello World.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Debug/Hello World.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/Hello World.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/vc141.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/vc141.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/vc141.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Debug/vc141.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Hello World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cppHelloWorld/Hello World/Hello World/Hello World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../cppdatabasics2/.vs/cppdatabasics2/v15/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cppdatabasics2/cppdatabasics2/cppdatabasics2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cppdatabasics2/cppdatabasics2/cppdatabasics2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../employeelab/src/hendricks/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../employeelab/src/hendricks/employee/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../employeelab/src/hendricks/employee/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../employeelab/src/hendricks/employee/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../television/src/hendricks/television/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../television/src/hendricks/television/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../television/src/hendricks/television/Television.java" beforeDir="false" afterPath="$PROJECT_DIR$/../television/src/hendricks/television/Television.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hendricks/carlab/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="67" lean-forward="true" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-              <folding>
-                <element signature="e#276#277#0" expanded="true" />
-                <element signature="e#306#307#0" expanded="true" />
-                <element signature="e#349#350#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#536#537#0" expanded="true" />
-                <element signature="e#568#569#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/hendricks/carlab/Main.java" />
-      </list>
-    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
@@ -62,18 +38,14 @@
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
+  <component name="ProjectId" id="1RHs1ovWnhKWdYzsLG3h0JHMQTC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes />
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -118,76 +90,22 @@
       <workItem from="1567779763071" duration="1471000" />
       <workItem from="1568036873533" duration="17000" />
       <workItem from="1568122008251" duration="689000" />
+      <workItem from="1569335144995" duration="124000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2179000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32892805" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="IDEtalk Messages" order="7" />
-      <window_info anchor="bottom" id="CheckStyle" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="IDEtalk" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-      <window_info anchor="right" id="Maven" order="9" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hendricks/carlab/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="67" lean-forward="true" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-          <folding>
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

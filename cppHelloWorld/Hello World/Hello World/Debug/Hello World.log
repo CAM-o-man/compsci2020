@@ -1,2 +1,3 @@
 ﻿  Hello World.cpp
+LINK : warning LNK4076: invalid incremental status file 'C:\compsci2020\cppHelloWorld\Hello World\Debug\Hello World.ilk' (which will be deleted); linking nonincrementally
   Hello World.vcxproj -> C:\compsci2020\cppHelloWorld\Hello World\Debug\Hello World.exe

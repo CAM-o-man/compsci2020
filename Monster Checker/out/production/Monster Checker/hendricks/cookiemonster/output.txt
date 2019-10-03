@@ -1,0 +1,14 @@
+"C:\Program Files\Java\jdk-11\bin\java.exe" -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:23212,suspend=y,server=n -javaagent:C:\Users\cam-o\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\192.6603.28\plugins\java\lib\rt\debugger-agent.jar -Dfile.encoding=UTF-8 -classpath "C:\compsci2020\Monster Checker\out\production\Monster Checker;C:\Users\cam-o\.m2\repository\org\jetbrains\annotations\17.0.0\annotations-17.0.0.jar;C:\Users\cam-o\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\192.6603.28\lib\idea_rt.jar" hendricks.cookiemonster.Main
+Connected to the target VM, address: '127.0.0.1:23212', transport: 'socket'
+Enter the first monster's name:
+charlie
+Please enter that monster's size.
+7
+Please enter the second monster's name.
+cthulhu
+Now, that monster's size.
+471
+Monster cthulhu is larger than Monster charlie.
+Disconnected from the target VM, address: '127.0.0.1:23212', transport: 'socket'
+
+Process finished with exit code 0

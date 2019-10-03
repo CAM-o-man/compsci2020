@@ -1,5 +1,11 @@
 package hendricks.cookiejar;
 
+/**
+ * @author Connor McDermid
+ * @date 2019.09.24
+ * @lab Cookie Jar
+ * @extra checkFull() running to sync full
+ */
 public class CookieJar {
 
     public final int capacity;

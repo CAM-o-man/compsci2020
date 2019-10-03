@@ -1,0 +1,8 @@
+"C:\Program Files\Java\jdk-11\bin\java.exe" -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:23063,suspend=y,server=n -javaagent:C:\Users\cam-o\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\192.6603.28\plugins\java\lib\rt\debugger-agent.jar -Dfile.encoding=UTF-8 -classpath C:\compsci2020\employeelab\out\production\employeelab;C:\Users\cam-o\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\192.6603.28\lib\idea_rt.jar hendricks.employee.Main
+Connected to the target VM, address: '127.0.0.1:23063', transport: 'socket'
+Employee: Hacker, Harry Salary: 100000.0
+Employee: Hacker, Harry Salary: 135000.0
+Employee: Hacker, Harry Salary: 121500.0
+Disconnected from the target VM, address: '127.0.0.1:23063', transport: 'socket'
+
+Process finished with exit code 0
