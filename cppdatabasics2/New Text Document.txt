@@ -1,0 +1,26 @@
+Hello World!
+Please enter a number in pounds to be converted to ounces.
+8888
+8888 pounds is equal to 142208 oz.
+Please enter your height in integer inches.
+12313
+That is 1026 feet and 1 inches.
+Please enter your age.
+15
+In 15 years you will be 30 years old.
+Please enter the miles you drove on your last trip
+123123123
+Now please enter the gallons of gas your car consumed.
+88
+Your miles per gallon is 1.39913e+06
+Please input your age in years.
+15
+Your age in days is 5475
+SpamMail is 55. Double that is 110, and that squared is 53.
+Please input the number of troy pounds.
+342
+That weighs 127649 grams.
+
+C:\compsci2020\cppdatabasics2\x64\Debug\cppdatabasics2.exe (process 8252) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .

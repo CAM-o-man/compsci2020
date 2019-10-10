@@ -29,7 +29,7 @@
     <ClCompile Include="PiggyBank.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="PiggyRunner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
