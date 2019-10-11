@@ -50,44 +50,39 @@ unsigned int PiggyBank::getQuarters() {
 }
 
 void PiggyBank::addPennies() {
-	pennies++;
+	PiggyBank::pennies++;
 }
 
 void PiggyBank::addNickels() {
-	nickels++;
+	PiggyBank::nickels++;
 }
 
 void PiggyBank::addDimes() {
-	dimes++;
+	PiggyBank::dimes++;
 }
 
 void PiggyBank::addQuarters() {
-	quarters++;
+	PiggyBank::quarters++;
 }
 
 void PiggyBank::setPennies(unsigned int pennies) {
-	pennies = pennies;
+	PiggyBank::pennies = pennies;
 }
 
 void PiggyBank::setNickels(unsigned int nick) {
-	nickels = nick;
+	PiggyBank::nickels = nick;
 }
 
 void PiggyBank::setDimes(unsigned int dim) {
-	dimes = dim;
+	PiggyBank::dimes = dim;
 }
 
 void PiggyBank::setQuarters(unsigned int quar) {
-	quarters = quar;
+	PiggyBank::quarters = quar;
 }
 
 double PiggyBank::checkBalance() {
-	double money = 0.00;
-	money += (pennies * 0.01);
-	money += (nickels * 0.05);
-	money += (dimes * 0.10);
-	money += (quarters * 0.25);
-	return money;
+	return PiggyBank::balance;
 }
 
 
@@ -101,7 +96,16 @@ command PiggyBank::hashCommand(string cmdstring) {
 	} else if (cmdstring.find("chusr") != (std::string::npos)) {
 		return command::chusr;
 	} else if (cmdstring.find("add") != (std::string::npos)) {
-		return command::addmon;
+		if (cmdstring.find("-c") != (std::string::npos)) {
+			return command::addc;
+		} else {
+			return command::addmon;
+		}
+	} else if (cmdstring.find("help") != (std::string::npos)) {
+		return command::help;
+	}
+	else if (cmdstring.find("cls") != (std::string::npos)) {
+		return command::cls;
 	} else {
 		return command::invalid;
 	}
@@ -112,21 +116,48 @@ void PiggyBank::add() {
 	cout << "How much would you like to add?" << endl;
 	string mon;
 	getline(cin, mon);
-	char* moncstring = (char*)mon.c_str();
-	const char* monconstc = mon.c_str();
-	if (!strtok(moncstring, ".")) {
-		cout << "That is not a valid amount of money." << endl;
+	if (mon.find(".") == std::string::npos) {
+		cout << "Please enter a valid monetary amount.";
 		goto retry;
 	}
+	double money = stod(mon);
+	PiggyBank::balance += money;
+}
 
-	double money = strtod(monconstc, '\0'); //requires a null terminator apparently
-
-	balance += money;
+void PiggyBank::addc() {
+	retry: //apparently labels are in fact scope-dependent. Learn something new every day.
+	cout << "Would you like to add (p)ennies, (n)ickels, (d)imes, or (q)uarters?" << endl;
+	char type;
+	string tmp;
+	getline(cin, tmp);
+	type = tmp[0];
+	if (type != 'p' && type != 'n' && type != 'd' && type != 'q') {
+		cout << "Invalid coin type." << endl;
+		goto retry;
+	}
+	cout << "How many?" << endl;
+	int amt;
+	cin >> amt;
+	PiggyBank::balance += (amt * type == 'p' //extra here, nested ternaries
+							? 0.01
+							: type == 'n'
+								? 0.05
+								: type == 'd'
+									? 0.1
+									: 0.25);
+	if (type == 'p') {
+		PiggyBank::pennies += amt;
+	} else if (type == 'n') {
+		PiggyBank::nickels += amt;
+	} else if (type == 'd') {
+		PiggyBank::dimes += amt;
+	} else {
+		PiggyBank::quarters += amt;
+	}
 }
 
 int PiggyBank::execCommand() {
-	cout << "Copyright (c) PiggyBankCorporation 2019.\n" << endl;
-	cout << name << "@piggy~$";
+	cout << name << "@piggy~$ ";
 	string com;
 	getline(cin, com);
 	command cmd = hashCommand(com);
@@ -141,8 +172,7 @@ int PiggyBank::execCommand() {
 		case command::namecom:
 			cout << name << endl;
 			break;
-		case command::chusr:
-		{
+		case command::chusr: { //braces to properly scope variable declaration
 			cout << "What is your name?" << endl;
 			string nm;
 			getline(cin, nm);
@@ -151,6 +181,15 @@ int PiggyBank::execCommand() {
 		}
 		case command::addmon:
 			add();
+			break;
+		case command::help:
+			cout << "bal: check balance\ncls: clear screen\nchusr: change user\nadd: add money \n\t-c: add coins\nhelp: show this menu\nexit: exit the program" << endl;
+			break;
+		case command::addc:
+			addc();
+			break;
+		case command::cls:
+			system("cls");
 			break;
 		default:
 			cout << "That is not a recognised command." << endl;

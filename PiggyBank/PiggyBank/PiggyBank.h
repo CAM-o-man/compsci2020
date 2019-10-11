@@ -8,7 +8,10 @@ enum class command {
 	namecom,
 	chusr,
 	addmon,
-	invalid
+	invalid,
+	addc,
+	help,
+	cls
 };
 
 class PiggyBank {
@@ -33,6 +36,8 @@ public:
 	command hashCommand(string cmdstring);
 
 	void add();
+
+	void addc();
 
 	int execCommand();
 
