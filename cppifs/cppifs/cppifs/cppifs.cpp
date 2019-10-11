@@ -1,5 +1,8 @@
 // cppifs.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//Author: Connor McDermid
+//Lab: Working with IFs
+//Extra: input validation with cin's goodbit and failbit
+//Known bugs: none
 
 #include <iostream>
 using namespace std;
@@ -43,4 +46,10 @@ void range() {
 	else {
 		cout << "Well, you did what I asked. I can't fault you for that, I suppose." << endl;
 	}
+}
+
+int main() {
+	heinz();
+	range();
+	return 0;
 }
