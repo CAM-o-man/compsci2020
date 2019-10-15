@@ -1,5 +1,6 @@
 from labsevena import Variables
 from labsevena import Math
+from labsevena import Divider
 
 """
 Author: Connor McDermid
@@ -14,8 +15,10 @@ def run():
 	first = Variables()
 	first.__main__()
 	
-	first = Math()
-	first.__main__()
-
+	second = Math()
+	second.__main__()
+	
+	third = Divider()
+	third.__main__()
 
 run()

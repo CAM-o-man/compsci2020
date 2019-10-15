@@ -70,3 +70,20 @@ class Math:
 
 	def __init__(self):
 		pass
+
+
+class Divider:
+	def divide(self, x, y):
+		return x / y
+	
+	def parse_input(self):
+		usr = input("Please enter a fraction: ")
+		nums = usr.split("/")
+		return nums
+	
+	def __main__(self):
+		usr = self.parse_input()
+		print("That fraction is equal to {}".format(self.divide(int(usr[0]), int(usr[1]))))
+		
+	def __init__(self):
+		pass
