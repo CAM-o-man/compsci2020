@@ -1,5 +1,11 @@
 class Variables:
+	"""
+	Methods for Part A.
 	
+	Contains the methods required to complete Part A.
+	Author: Connor McDermid
+	Date: 2019.10.15
+	"""
 	def get_name(self):
 		name = input("Please input your name: ")
 		return name
@@ -26,6 +32,13 @@ class Variables:
 
 
 class Math:
+	"""
+	Methods for Part B.
+	
+	Contains the methods required to complete Part B.
+	Author: Connor McDermid
+	Date: 2019.10.15
+	"""
 	def get_x(self):
 		return int(input("Please enter an integer: "))
 	
