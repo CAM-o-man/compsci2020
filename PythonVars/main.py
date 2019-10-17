@@ -8,22 +8,23 @@ from labsevenb import Calc
 Author: Connor McDermid
 Lab: 7a
 Date: 2019.10.15
-Extra: Object Oriented (labsevena.py), import statements.
+Extra: Object Oriented, import statements, enums, type specifications, tuples, sets,
+passing functions to variables, modules, constructors.
 """
 
 
 def __main__():
-    """Run the program."""
-    first = Variables()
-    first.__main__()
+	"""Run the program."""
+	# this comment was placed by poojit tummalapalli in bombcerski's class
+	first = Variables()
+	first.__main__()
+	# something
+	second = Math()
+	second.__main__()
 
-    second = Math()
-    second.__main__()
+	third = Divider()
+	third.__main__()
 
-    third = Divider()
-    third.__main__()
-
-	# Second Lab
 	usr = input("Please input the shape you'd like to calculate the area of.")
 	identifier = {
 		"rectangle": Shape.rect,
@@ -43,7 +44,7 @@ def __main__():
 		print(Calc.calc_area(int(l), int(w), identifier.get(usr)))
 
 	usr = input("Please input the shape you'd like to calculate the volume of: ")
-
+	# The following is an if statement
 	if identifier.get(usr) == Shape.circle:
 		r = input("Please input the radius: ")
 		print(Calc.calc_volume(int(r), None, None, Shape.circle))
@@ -54,3 +55,4 @@ def __main__():
 		h = input("Please input the height of the shape: ")
 		base = (int(b1), int(b2))
 		print(Calc.calc_volume(base, int(w), int(h), Shape.trap))
+	# take me homeeee, country rooads, west virginia, mountain mamabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
