@@ -1,3 +1,5 @@
-﻿  Source.cpp
-C:\compsci2020\HonourRoll\HonourRoll\Source.cpp(60,22): warning C4838: conversion from 'int' to 'unsigned int' requires a narrowing conversion
+﻿  Class.cpp
+  Source.cpp
+  Student.cpp
+  Generating Code...
   HonourRoll.vcxproj -> C:\compsci2020\HonourRoll\Debug\HonourRoll.exe

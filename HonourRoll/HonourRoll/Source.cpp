@@ -1,70 +1,96 @@
-#include "Student.h"
 #include "Class.h"
-#include <iostream>
+#include "Student.h"
 #include <string>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
+/*
+Author: Connor McDermid
+Lab: Honour Roll
+Date: 2019.10.23
+Extras: Vectors, References, Operator Overloading, Friend Methods
+Known Bugs: None at present. Tester, please add bugs here if you find any.
+*/
+unsigned int findAvg(Student& s) {
+	vector<Class> classes = s.getClasses();
+	unsigned int sum = 0;
 
-bool checkRoll(Student s) { //FIXME: Exception thrown: read access violation. \n **this** was 0x9AC9906C
-	unsigned int count = s.getClassCount();
-	if (!(count >= 5 && count <= 8)) {
+	for (unsigned int i = 0; i < classes.size(); i++) {
+		sum += classes[i].getGrade();
+	}
+
+	unsigned int avg = sum / classes.size();
+
+	return avg;
+}
+
+bool passer(Student& s) {
+	if (s.hasInfractions()) {
 		return false;
 	}
-	unsigned int avg = s.getAvg();
-	if (!(avg >= 90)) {
+	if (s.getClasses().size() >= 5 && s.getClasses().size() <= 8) {
+		if (findAvg(s)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
 		return false;
 	}
-	return true;
 }
 
 int main() {
-	cout << "Welcome, student! Please enter your full name." << endl;
+	cout << "Welcome to the Honour Roll Acceptance Test." << endl;
+	cout << "Due to technical constraints, at this time admission relies on the honour system." << endl;
+	cout << "If you're trying to join an honour society, you should be honourable." << endl;
+	cout << "Keeping this in mind, please enter your name." << endl;
 	string name;
-	cin.ignore();
+	cin.ignore(); // clear trailing newlines and whitespace
 	getline(cin, name);
-	Student stud = Student(name);
+	cout << "Now, please enter the number of classes you're taking." << endl;
 	retry:
-	cout << "Welcome, student! Please enter the number of courses you are taking." << endl;
-	int coursenum;
-	cin >> coursenum;
+	unsigned int classnum;
+	cin >> classnum;
 	if (cin.fail()) {
 		cin.clear();
-		cout << "That's not a number. Please try again." << endl;
+		cout << "That wasn't a natural number. Please try again." << endl;
 		goto retry;
 	}
-	if (coursenum > 8) {
-		cout << "Hey! What are you trying to pull?" << endl;
-		cout << "That's not a legal number of courses!" << endl;
-		goto retry;
-	}
-	int tmpgrade;
+	vector<Class> classes;
 	string tmpname;
-	for (int i = 0; i < coursenum; i++) {
-		cout << "Please enter the name of your course." << endl;
+	unsigned int tmpgrade;
+	for (unsigned int i = 0; i < classnum; i++) {
+		cout << "Please enter the name of class number " << i + 1 << endl;
 		cin.ignore();
 		getline(cin, tmpname);
-		cout << "Now, please enter your grade in said course." << endl;
+		cout << "Now please enter the grade you have in this class." << endl;
 		cin >> tmpgrade;
 		if (cin.fail()) {
 			cin.clear();
-			cout << "That's not a number. Please try again." << endl;
+			cout << "That's not a valid grade." << endl;
 			i--;
 			continue;
 		}
-		if (tmpgrade > 100) {
-			cout << "That's not a valid grade. Please try again." << endl;
-			i--;
-			continue;
-		}
-		Class newclass = { tmpgrade, tmpname };
-		stud.addClass(newclass);
+		Class tmpclass(tmpgrade, tmpname);
+		classes.push_back(tmpclass);//critical question here - tmpclass immediately goes out of scope and its memory will be deallocated. 
+									//Does a vector store a copy of or a reference to tmpclass?
+	}								//Answer - it does store a copy as opposed to a reference as far as I can tell. Otherwise, memory would leak and the program would break.
+	Student stud(name, classes);
+	cout << "Do you have any disciplinary infractions? [Y|N]" << endl;
+	cin.ignore();
+	string dis;
+	getline(cin, dis);
+	stud.setInfractions(dis == "Y");
+	if (passer(stud)) {
+		cout << "You have passed, and are on the honour roll. Congratulations." << endl;
+		return 0;
 	}
-
-	if (checkRoll(stud)) {
-		cout << "Congratulations, " << stud.getName() << " you have made the honour roll!" << endl;
-	} else {
-		cout << "Unfortunately, " << stud.getName() << ", you have not made the honour roll." << endl;
+	else {
+		cout << "Unfortunately, you have not made the honour roll. Better luck next time!" << endl;
+		return 0;
 	}
-	return 0;
 }
