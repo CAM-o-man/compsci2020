@@ -26,5 +26,5 @@ public:
 
 	void removeClass(Class c); // Matches the class name and removes it from vector
 
-	Student(std::string n, std::vector<Class> cv);
+	Student(std::string n, std::vector<Class> cv); // Constructor to build a student provided a vector of Classes
 };

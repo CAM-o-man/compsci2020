@@ -6,7 +6,13 @@
 
 using namespace std;
 
-
+/*
+Author: Connor McDermid
+Lab: Honour Roll
+Date: 2019.10.23
+Extras: Vectors, References, Operator Overloading, Friend Methods
+Known Bugs: None at present. Tester, please add bugs here if you find any.
+*/
 unsigned int findAvg(Student& s) {
 	vector<Class> classes = s.getClasses();
 	unsigned int sum = 0;
@@ -43,7 +49,7 @@ int main() {
 	cout << "If you're trying to join an honour society, you should be honourable." << endl;
 	cout << "Keeping this in mind, please enter your name." << endl;
 	string name;
-	cin.ignore();
+	cin.ignore(); // clear trailing newlines and whitespace
 	getline(cin, name);
 	cout << "Now, please enter the number of classes you're taking." << endl;
 	retry:
@@ -70,7 +76,7 @@ int main() {
 			continue;
 		}
 		Class tmpclass(tmpgrade, tmpname);
-		classes.push_back(tmpclass); //critical question here - tmpclass immediately goes out of scope and its memory will be deallocated. 
+		classes.push_back(tmpclass);//critical question here - tmpclass immediately goes out of scope and its memory will be deallocated. 
 									//Does a vector store a copy of or a reference to tmpclass?
 	}								//Answer - it does store a copy as opposed to a reference as far as I can tell. Otherwise, memory would leak and the program would break.
 	Student stud(name, classes);
