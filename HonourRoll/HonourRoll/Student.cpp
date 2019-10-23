@@ -1,93 +1,49 @@
 #include "Student.h"
 #include "Class.h"
-#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+
 using namespace std;
 
-
-/*
-This adds a function to the `==` operator to allow it to compare my Class structure.
-*/
-bool operator==(const Class& lhs, const Class& rhs) {
-	return (lhs.name == rhs.name && lhs.grade == rhs.grade);
-}
-
-bool Student::addClass(Class c) {
-	Class defaultclass = {
-		0,
-		""
-	};
-	for (int i = 0; i < 8; i++) {
-		if (*(this->classes + i) == defaultclass) {
-			*(this->classes + i) = c;
-			return true;
-		}
-		else {
-			if (i != 7) {
-				continue;
-			} else {
-				return false;
-			}
-		}
-	}
-}
-
-unsigned int Student::getClassCount() {
-	Class defaultclass = {
-		0,
-		""
-	};
-	for (int i = 0; i < 8; i++) {
-		if (*(this->classes + i) == defaultclass) {
-			return i;
-		}
-		else {
-			if (i != 7) {
-				continue;
-			}
-			else {
-				return 8;
-			}
-		}
-	}
-}
-
-Class* Student::getClasses() {
-	return this->classes;
-}
-
-void Student::setAvg(unsigned int average) {
-	this->avg = average;
-}
-
-unsigned int Student::getAvg() {
-	unsigned int count = this->getClassCount(); //FIXME: read access violation. **this** was 0x9AC9906C
-	unsigned int sum = 0;
-	for (int i = 0; i < count; i++) {
-		sum += (this->classes + i)->grade;
-	}
-	unsigned int avg = sum / count;
-	return avg;
-}
-
-void Student::setName(std::string n) {
-	this->name = n;
-}
-
-std::string Student::getName() {
+string Student::getName() {
 	return this->name;
 }
 
-Student::Student() {
-	//default constructor
+void Student::setName(string n) {
+	this->name = n;
 }
 
-Student::Student(string name) {
-	this->name = name;
-	for (int i = 0; i < 8; i++) {
-		*(this->classes) = *(new Class(0, ""));
+vector<Class> Student::getClasses() {
+	return this->classes;
+}
+
+void Student::addClass(Class c) { //Is never called at present, but could be useful for later if we ever use this lab again.
+	this->classes.push_back(c);
+}
+
+unsigned int Student::numberOfClasses() {
+	return this->classes.size();
+}
+
+bool Student::hasInfractions() {
+	return this->infractions;
+}
+
+void Student::setInfractions(bool i) {
+	this->infractions = i;
+}
+
+void Student::removeClass(Class c) {
+	for (unsigned int i = 0; i < this->numberOfClasses(); i++) {
+		this->classes.erase(remove_if(this->classes.begin(), this->classes.end(), [&c](Class& cls) {return cls == c; }), this->classes.end()); //erase-remove idiom
 	}
 }
 
-Student::~Student() {
-	delete this->classes;
+Student::Student(string n, vector <Class> cv) {
+	this->setName(n);
+	for (unsigned int i = 0; i < cv.size(); i++) {
+		this->addClass(cv[i]);
+	}
 }
