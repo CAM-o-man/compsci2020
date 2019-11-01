@@ -13,26 +13,27 @@ int main() {
 		{"C", 3}, {"D", 4},
 		{"F", 5}
 	};
-	cout << grades["E"]; //Testing map shit
+
 	getline(cin, usr);
 	switch(grades[usr]) {
-		case 0:
+		case 1:
 			cout << "Your work is outstanding!" << endl;
 			break;
-		case 1:
+		case 2:
 			cout << "You are doing good work!" << endl;
 			break;
-		case 2:
+		case 3:
 			cout << "YOur work is satisfactory." << endl;
 			break;
-		case 3:
+		case 4:
 			cout << "You need to work a little harder." << endl;
 			break;
-		case 4:
+		case 5:
 			cout << "Please see me for extra help!" << endl;
 			break;
+		case 0:
 		default:
-			cout << "THat's not a valid letter grade." << endl;
+			cout << "That's not a valid letter grade." << endl;
 			cout << "Have you checked that it's captital?" << endl;
 			goto redo;
 	}
