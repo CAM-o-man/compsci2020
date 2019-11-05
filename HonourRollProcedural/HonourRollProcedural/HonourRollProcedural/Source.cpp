@@ -7,6 +7,7 @@
 
 using namespace std;
 typedef string str;
+typedef unsigned int uint;
 
 void usrClasses(map<str, int>& classes) {
 	//get name and grade from user
@@ -21,14 +22,65 @@ void usrClasses(map<str, int>& classes) {
 	classes[name] = grade;
 }
 
-bool passer(map<str, int>& classes, bool& infracs) {
+bool passer(map<str, int>& classes, bool infracs) {
 	if (infracs) {
 		return false;
 	}
 	
 	if (classes.size() >= 5 && classes.size() <= 8) {
-		for (auto i : classes) {
-
+		int gradesum = 0;
+		for (pair<str, int> i : classes) {
+			gradesum += i.second;
+		}
+		if (gradesum / classes.size() < 90) {
+			return false;
+		}
+		else {
+			return true;
 		}
 	}
+	else {
+		return false;
+	}
+}
+
+int main() {
+	start:
+	map<str, int> studclasses;
+	bool infracs;
+	string name;
+	//get name
+	cout << "Please input your name:" << endl;
+	cin.ignore(); //consume trailing whitespace
+	getline(cin, name);
+	cin.ignore();
+	//now get their classes
+	uint classnum;
+	class_input:
+	cout << "Please input the number of classes you're taking: " << endl;
+	cin >> classnum;
+	if (cin.fail()) {
+		cout << "That's not valid." << endl;
+		goto class_input;
+	}
+	for (uint i = 0; i < classnum; i++) {
+		usrClasses(studclasses);
+	}
+	cout << "Has Mr. Menadier scheduled a meeting with you?" << endl;
+	str reply;
+	cin.ignore(); // clear trailing whitespace
+	getline(cin, reply);
+	if (reply == "yes" || reply == "Yes" || reply == "YES") {
+		infracs = true;
+	}
+	else {
+		infracs = false;
+	}
+	if (passer(studclasses, infracs)) {
+		cout << "Congrats! Welcome to the Honour Roll." << endl;
+	}
+	else {
+		cout << "Unfortunately, you did not make the honour roll." << endl;
+	}
+	return 0;
 }
