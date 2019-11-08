@@ -1,3 +1,3 @@
 
 def check_repeat(s: str, subs: str) -> bool:
-    return subs in s
+    return True if (subs in s) > 1 else False

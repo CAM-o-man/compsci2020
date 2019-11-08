@@ -7,3 +7,5 @@ def find_pairs(s: str) -> int:
             pairs += 1
 
         mem = i
+
+    return pairs
