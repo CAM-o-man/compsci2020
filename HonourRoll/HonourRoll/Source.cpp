@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -87,10 +88,19 @@ int main() {
 	stud.setInfractions(dis == "Y");
 	if (passer(stud)) {
 		cout << "You have passed, and are on the honour roll. Congratulations." << endl;
+		cout << "Results:" << endl;
+		for (int i = 0; i < classes.size(); i++) {
+			cout << classes[i].getName() << " " << classes[i].getGrade() << endl;
+		}
+
 		return 0;
 	}
 	else {
 		cout << "Unfortunately, you have not made the honour roll. Better luck next time!" << endl;
+		cout << "Results:" << endl;
+		for (int i = 0; i < classes.size(); i++) {
+			cout << classes[i].getName() << " " << classes[i].getGrade() << endl;
+		}
 		return 0;
 	}
 }

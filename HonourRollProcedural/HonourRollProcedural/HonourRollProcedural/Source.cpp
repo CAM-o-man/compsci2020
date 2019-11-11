@@ -4,7 +4,12 @@
 #include <algorithm>
 #include "GetData.h"
 #include <map>
-
+/*
+ * Author: Connor McDermid
+ * Lab: Honour Roll Procedural
+ * Extra: Maps
+ * Known Bugs: Output not aesthetically pleasing, occasional errors with cin regarding trailing whitespace
+*/
 using namespace std;
 typedef string str;
 typedef unsigned int uint;
@@ -45,15 +50,12 @@ bool passer(map<str, int>& classes, bool infracs) {
 }
 
 int main() {
-	start:
 	map<str, int> studclasses;
 	bool infracs;
 	string name;
 	//get name
 	cout << "Please input your name:" << endl;
-	cin.ignore(); //consume trailing whitespace
 	getline(cin, name);
-	cin.ignore();
 	//now get their classes
 	uint classnum;
 	class_input:
@@ -63,6 +65,7 @@ int main() {
 		cout << "That's not valid." << endl;
 		goto class_input;
 	}
+	cin.ignore();
 	for (uint i = 0; i < classnum; i++) {
 		usrClasses(studclasses);
 	}
