@@ -11,4 +11,4 @@ def vowel(c: chr) -> bool:
 
 
 def find_vowel(s: str) -> bool:
-	return True if vowel(s[0]) is True else False
+	return True if vowel(s[0]) is True else vowel(s[::-1])
