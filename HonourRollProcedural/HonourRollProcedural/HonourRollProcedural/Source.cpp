@@ -69,16 +69,7 @@ int main() {
 	for (uint i = 0; i < classnum; i++) {
 		usrClasses(studclasses);
 	}
-	cout << "Has Mr. Menadier scheduled a meeting with you?" << endl;
-	str reply;
-	cin.ignore(); // clear trailing whitespace
-	getline(cin, reply);
-	if (reply == "yes" || reply == "Yes" || reply == "YES") {
-		infracs = true;
-	}
-	else {
-		infracs = false;
-	}
+	infracs = true ? rand() % 2 == 0 : false; //randomly assigned disciplinary infractions
 	if (passer(studclasses, infracs)) {
 		cout << "Congrats! Welcome to the Honour Roll." << endl;
 	}
