@@ -59,7 +59,7 @@ int main() {
 	uint classnum;
 	cin >> classnum;
 	if (cin.fail()) {
-		cin.clear();
+		cin.clear(); cin.ignore(INT_MAX, '\n'); //flush the entire buffer until EOF or newline, whichever comes first.
 		cout << "That wasn't a natural number. Please try again." << endl;
 		goto retry;
 	}

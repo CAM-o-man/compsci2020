@@ -35,7 +35,7 @@ void Student::setInfractions(bool i) {
 	this->infractions = i;
 }
 
-void Student::removeClass(Class c) {
+void Student::removeClass(Class c) { //ditto: see Student::addClass()
 	for (unsigned int i = 0; i < this->numberOfClasses(); i++) {
 		this->classes.erase(remove_if(this->classes.begin(), this->classes.end(), [&c](Class& cls) {return cls == c; }), this->classes.end()); //erase-remove idiom
 	}
