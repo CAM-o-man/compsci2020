@@ -14,7 +14,16 @@ Author: Connor McDermid
 Lab: Honour Roll
 Date: 2019.10.23
 Extras: Vectors, References, Operator Overloading, Friend Methods
-Known Bugs: On invalid input, output is looped forever.
+Known Bugs: None
+Requirements: Write a program which will tell a student whether he/she is eligible for the honor roll.  Students are eligible if
+they have at least a 90 average, are taking 5 or more courses, and have had no discipline infractions. Student can
+take a maximum of 8 courses per semester.
+Have your program get input from the student, including the student&#39;s full name, list of courses, and grades.
+Please limit course name to 20 characters. Grades are always given as integers and the average must properly
+rounded to the nearest integer value. Randomly assign whether they have a discipline issue. Print an appropriate
+message if the user enters invalid data and ask that they re-enter the data.  Print out all information for the user
+once they have completed entering their name, classes, and grades. Don’t forget to tell them their disciplinary
+status and average.
 */
 uint findAvg(Student& s) {
 	vector<Class> classes = s.getClasses();
