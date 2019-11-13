@@ -8,7 +8,16 @@
  * Author: Connor McDermid
  * Lab: Honour Roll Procedural
  * Extra: Maps
- * Known Bugs: Output not aesthetically pleasing, occasional errors with cin regarding trailing whitespace
+ * Known Bugs: None
+ * Requirements: Write a program which will tell a student whether he/she is eligible for the honor roll.  Students are eligible if
+they have at least a 90 average, are taking 5 or more courses, and have had no discipline infractions. Student can
+take a maximum of 8 courses per semester.
+Have your program get input from the student, including the student&#39;s full name, list of courses, and grades.
+Please limit course name to 20 characters. Grades are always given as integers and the average must properly
+rounded to the nearest integer value. Randomly assign whether they have a discipline issue. Print an appropriate
+message if the user enters invalid data and ask that they re-enter the data.  Print out all information for the user
+once they have completed entering their name, classes, and grades. Don’t forget to tell them their disciplinary
+status and average.
 */
 using namespace std;
 typedef string str;
@@ -20,7 +29,12 @@ void usrClasses(map<str, int>& classes) {
 	int grade;
 	bool isValid = false;
 	cout << "Please input a name for the class: " << endl;
+	toolong:
 	getline(cin, name);
+	if (name.length() > 20) {
+		cout << "Name is too long. Please keep it under 20 characters." << endl;
+		goto toolong;
+	}
 	do {
 		cout << "Please input your grade for " << name << endl;
 	} while (!(isValid = getValidInt(grade)));
@@ -62,6 +76,7 @@ int main() {
 	cout << "Please input the number of classes you're taking: " << endl;
 	cin >> classnum;
 	if (cin.fail()) {
+		cin.clear(); cin.ignore(INT_MAX, '\n');
 		cout << "That's not valid." << endl;
 		goto class_input;
 	}
