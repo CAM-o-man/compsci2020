@@ -1,4 +1,1 @@
 ﻿  Source.cpp
-C:\compsci2020\HonourRoll\HonourRoll\Source.cpp(92,21): warning C4018: '<': signed/unsigned mismatch
-C:\compsci2020\HonourRoll\HonourRoll\Source.cpp(101,21): warning C4018: '<': signed/unsigned mismatch
-  HonourRoll.vcxproj -> C:\compsci2020\HonourRoll\Debug\HonourRoll.exe

@@ -5,6 +5,8 @@
 #include <vector>
 #include <iomanip>
 
+typedef unsigned int uint;
+
 using namespace std;
 
 /*
@@ -12,17 +14,17 @@ Author: Connor McDermid
 Lab: Honour Roll
 Date: 2019.10.23
 Extras: Vectors, References, Operator Overloading, Friend Methods
-Known Bugs: None at present. Tester, please add bugs here if you find any.
+Known Bugs: On invalid input, output is looped forever.
 */
-unsigned int findAvg(Student& s) {
+uint findAvg(Student& s) {
 	vector<Class> classes = s.getClasses();
-	unsigned int sum = 0;
+	uint sum = 0;
 
-	for (unsigned int i = 0; i < classes.size(); i++) {
+	for (uint i = 0; i < classes.size(); i++) {
 		sum += classes[i].getGrade();
 	}
 
-	unsigned int avg = sum / classes.size();
+	uint avg = sum / classes.size();
 
 	return avg;
 }
@@ -54,7 +56,7 @@ int main() {
 	getline(cin, name);
 	cout << "Now, please enter the number of classes you're taking." << endl;
 	retry:
-	unsigned int classnum;
+	uint classnum;
 	cin >> classnum;
 	if (cin.fail()) {
 		cin.clear();
@@ -63,15 +65,20 @@ int main() {
 	}
 	vector<Class> classes;
 	string tmpname;
-	unsigned int tmpgrade;
-	for (unsigned int i = 0; i < classnum; i++) {
+	uint tmpgrade;
+	for (uint i = 0; i < classnum; i++) {
 		cout << "Please enter the name of class number " << i + 1 << endl;
 		cin.ignore();
+		nametoolong:
 		getline(cin, tmpname);
+		if (tmpname.length() > 20) {
+			cout << "Name too long. Please keep it under 20 characters." << endl;
+			goto nametoolong;
+		}
 		cout << "Now please enter the grade you have in this class." << endl;
 		cin >> tmpgrade;
 		if (cin.fail()) {
-			cin.clear();
+			cin.clear(); cin.ignore();
 			cout << "That's not a valid grade." << endl;
 			i--;
 			continue;
@@ -81,24 +88,24 @@ int main() {
 									//Does a vector store a copy of or a reference to tmpclass?
 	}								//Answer - it does store a copy as opposed to a reference as far as I can tell. Otherwise, memory would leak and the program would break.
 	Student stud(name, classes);
-	cout << "Do you have any disciplinary infractions? [Y|N]" << endl;
-	cin.ignore();
-	string dis;
-	getline(cin, dis);
-	stud.setInfractions(dis == "Y");
+	srand((unsigned)time(0));
+	stud.setInfractions(true
+						? rand() % 2 == 0
+						: false);
 	if (passer(stud)) {
 		cout << "You have passed, and are on the honour roll. Congratulations." << endl;
 		cout << "Results:" << endl;
-		for (int i = 0; i < classes.size(); i++) {
+		for (uint i = 0; i < classes.size(); i++) {
 			cout << classes[i].getName() << " " << classes[i].getGrade() << endl;
 		}
+		cout << "Disciplinary Infraction: " << stud.hasInfractions() << endl;
 
 		return 0;
 	}
 	else {
 		cout << "Unfortunately, you have not made the honour roll. Better luck next time!" << endl;
 		cout << "Results:" << endl;
-		for (int i = 0; i < classes.size(); i++) {
+		for (uint i = 0; i < classes.size(); i++) {
 			cout << classes[i].getName() << " " << classes[i].getGrade() << endl;
 		}
 		return 0;
