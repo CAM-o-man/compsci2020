@@ -9,11 +9,11 @@ protected:
 	std::string name;
 
 public:
-	virtual float getPrice(void) = 0;
+	virtual float getPrice(void);
 
-	virtual std::string getName(void) = 0;
+	virtual std::string getName(void);
 
-	virtual void setPrice(float) = 0;
+	virtual void setPrice(float);
 };
 
 #endif

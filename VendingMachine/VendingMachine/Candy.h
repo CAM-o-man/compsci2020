@@ -3,6 +3,7 @@
 class Candy :
 	public Food
 {
+public:
 	Candy();
 };
 

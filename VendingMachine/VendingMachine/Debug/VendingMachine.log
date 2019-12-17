@@ -1,2 +1,10 @@
-﻿  Source.cpp
-  VendingMachine.vcxproj -> C:\compsci2020\VendingMachine\Debug\VendingMachine.exe
+﻿  Beverage.cpp
+  Candy.cpp
+  Food.cpp
+  HotDog.cpp
+  Pizza.cpp
+  Popcorn.cpp
+  Source.cpp
+  Generating Code...
+  LINK : C:\Users\ETTC\cam-o\compsci2020\VendingMachine\Debug\VendingMachine.exe not found or not built by the last incremental link; performing full link
+  VendingMachine.vcxproj -> C:\Users\ETTC\cam-o\compsci2020\VendingMachine\Debug\VendingMachine.exe

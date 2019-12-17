@@ -8,9 +8,16 @@
 
 using namespace std;
 
+float pricecompile(vector<Food const&> order) {
+
+}
+
 int main() {
-	Beverage test = Beverage();
-	cout << test.getName() << endl;
-	cout << test.getPrice() << endl;
-	cout << typeid(test).name() << endl;
+	//initialise order vector
+	int test;
+	cin >> test;
+	if (!cin.good()) {
+		cin.clear();
+
+	}
 }
