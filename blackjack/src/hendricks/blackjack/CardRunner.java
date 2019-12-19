@@ -1,15 +1,18 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
 
 package hendricks.blackjack;
 
 import static java.lang.System.*;
 import java.awt.Color;
 
+/**
+ * @author Connor McDermid
+ * @lab BlackJackCard
+ * @date 2019.10.03
+ * @extra super
+ */
 public class CardRunner
 {
-    public static void main( String args[] ) {
+    public static void main(String args[]) {
 
 		Card one = new Card("SPADES", 9);
 		out.println(one.getSuit());
@@ -23,11 +26,14 @@ public class CardRunner
 		Card three = new Card("CLUBS", 4);
 		out.println(three);
 
-		Card four = new Card("SPADES", 12);
+		Card four = new BlackJackCard("SPADES", 12);
 		out.println(four);
 
-		Card five = new Card("HEARTS", 12);
+		Card five = new BlackJackCard("HEARTS", 12);
 		out.println(five);
+
+		Card six = new BlackJackCard("CLUBS", 12);
+		out.println(six);
 
     }
 }

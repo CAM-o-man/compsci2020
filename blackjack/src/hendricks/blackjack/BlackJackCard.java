@@ -1,5 +1,12 @@
 package hendricks.blackjack;
 
+
+/**
+ * @author Connor McDermid
+ * @date 2019.10.03
+ * @lab BlackJack
+ * @extra super
+ */
 public class BlackJackCard extends Card {
     private int value = checkValue();
 
@@ -47,7 +54,7 @@ public class BlackJackCard extends Card {
 
     @Override
     public String toString() {
-        return String.format()
+        return String.format("Card: %s of %s. Value: %d", super.getFace(), super.getSuit(), this.getValue());
     }
 
 }
