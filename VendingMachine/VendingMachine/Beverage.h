@@ -8,7 +8,7 @@ class Beverage :
 	public Food
 {
 public:
-	float getPrice();
+	const float getPrice();
 	
 	std::string getName();
 

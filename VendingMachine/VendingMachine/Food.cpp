@@ -4,7 +4,7 @@ std::string Food::getName(void) {
 	return this->name;
 }
 
-float Food::getPrice(void) {
+const float Food::getPrice(void) {
 	return this->price;
 }
 

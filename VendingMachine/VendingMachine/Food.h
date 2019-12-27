@@ -4,12 +4,14 @@
 #define FOOD_H
 class Food
 {
-protected:
-	float price;
-	std::string name;
 
 public:
-	virtual float getPrice(void);
+
+	std::string name;
+
+	float price;
+
+	virtual const float getPrice(void);
 
 	virtual std::string getName(void);
 

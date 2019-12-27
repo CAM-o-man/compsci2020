@@ -2,7 +2,7 @@
 
 using namespace std;
 
-float Beverage::getPrice() {
+const float Beverage::getPrice() {
 	return this->price;
 }
 

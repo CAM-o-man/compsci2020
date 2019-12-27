@@ -3,6 +3,7 @@
 class Popcorn :
 	public Food
 {
+public:
 	Popcorn();
 };
 
