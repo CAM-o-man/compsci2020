@@ -39,6 +39,7 @@ void acquireOrder(vector<Food const*>* order) {
 
 	switch (choice - 1) {
 		case 0:
+			// dynamic allocation of memory here because of pointers and how they work.
 			order->push_back(new Beverage());
 			break;
 		case 1:
