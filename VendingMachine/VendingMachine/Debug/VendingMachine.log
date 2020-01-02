@@ -1,2 +1,3 @@
 ﻿  Source.cpp
-  VendingMachine.vcxproj -> C:\Users\Administrator\cam-o\compsci2020\VendingMachine\Debug\VendingMachine.exe
+C:\Users\ETTC\cam-o\compsci2020\VendingMachine\VendingMachine\Source.cpp(99): warning C4715: 'commandParser': not all control paths return a value
+  VendingMachine.vcxproj -> C:\Users\ETTC\cam-o\compsci2020\VendingMachine\Debug\VendingMachine.exe
