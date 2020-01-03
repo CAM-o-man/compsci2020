@@ -17,7 +17,7 @@ Requirements:
 	Prompts and intakes the user’s full name !
 	Food selection is formatted neatly !
 	Food selection shows its name with a character surrounded in parentheses !
-	Every food item has a corresponding food price !
+	Every food item has a corresponding food price ! 
 	Food selection is not case-sensitive !
 	User must be told to use the corresponding characters for the food items !
 	User must be told how to stop selecting items !
@@ -26,8 +26,8 @@ Requirements:
 	After the user enters their choice(s) print out what the user has chosen !
 	After the user enters their choice(s) print out the price of the food chosen !
 	After the user confirms their choice, the loop starts over and another patron is allowed to order !
-	After the 1000th customer is served, the machine prints out that it must be refurbished
-	After the 1000th customer is served, the machine shuts down.
+	After the 1000th customer is served, the machine prints out that it must be refurbished !
+	After the 1000th customer is served, the machine shuts down. !
 	User can enter a special code (‘Q’) to be able to enter a command !
 	Users can enter ‘ShutMeDown’ to shut down the terminal after typing ‘Q’ !
 */
@@ -96,6 +96,13 @@ int commandParser() {
 		setUses(0);
 		return 0;
 	}
+	else if (cmd == "help") {
+		cout << "ShutMeDown: Shut down the machine.\n"
+			<< "uses: obtain uses count.\n"
+			<< "break: simulate a machine failure.\n"
+			<< "fix: execute default machine recovery script.\n"
+			<< "help: display this menu.\n";
+	}
 }
 
 float pricecompile(vector<Food const*> order) {
@@ -107,7 +114,7 @@ float pricecompile(vector<Food const*> order) {
 	return price;
 }
 
-void acquireOrder(vector<Food const*>* order) {
+void acquireOrder(vector<Food const*> *order) {
 	cout << "Please enter the item you wish to purchase: " << endl;
 	cout << "1: (B)everage" << endl;
 	cout << "2: (C)andy" << endl;
@@ -186,8 +193,9 @@ int main() {
 			if (readUses() >= 1000) {
 				cout << "Error encountered. Maintenance required." << endl;
 				cout << "Booting into recovery mode..." << endl;
-				commandParser();
-				exit(1);
+				do {
+					commandParser();
+				} while (true);
 			}
 		}
 		else {
