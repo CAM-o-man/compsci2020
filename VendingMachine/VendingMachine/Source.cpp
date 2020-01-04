@@ -198,7 +198,7 @@ int main() {
 				} while (true);
 			}
 		}
-		else {
+		else { // create new uses file and populate with filler value
 			ofstream usefile;
 			usefile.open("uses.dat");
 			usefile << 0;
