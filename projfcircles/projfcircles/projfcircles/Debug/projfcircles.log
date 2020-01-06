@@ -1,0 +1,4 @@
+﻿  projfcircles.cpp
+C:\Users\ETTC\cam-o\compsci2020\projfcircles\projfcircles\projfcircles\projfcircles.cpp(11,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\ETTC\cam-o\compsci2020\projfcircles\projfcircles\projfcircles\projfcircles.cpp(15,25): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  projfcircles.vcxproj -> C:\Users\ETTC\cam-o\compsci2020\projfcircles\projfcircles\Debug\projfcircles.exe
