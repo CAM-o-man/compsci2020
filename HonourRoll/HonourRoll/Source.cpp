@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <algorithm>
 
 typedef unsigned int uint;
 
@@ -72,6 +73,10 @@ int main() {
 		cout << "That wasn't a natural number. Please try again." << endl;
 		goto retry;
 	}
+	if (classnum > 8) {
+		cout << "You've entered more than the maximum 8 classes. Removing extraneous classes." << endl;
+		classnum = 8;
+	}
 	vector<Class> classes;
 	string tmpname;
 	uint tmpgrade;
@@ -92,22 +97,31 @@ int main() {
 			i--;
 			continue;
 		}
+		if (tmpgrade < 0) {
+			cout << "You've entered a grade less than 0. Our system does not allow this. Correcting grade." << endl;
+			tmpgrade = 0;
+		}
 		Class tmpclass(tmpgrade, tmpname);
 		classes.push_back(tmpclass);//critical question here - tmpclass immediately goes out of scope and its memory will be deallocated. 
 									//Does a vector store a copy of or a reference to tmpclass?
 	}								//Answer - it does store a copy as opposed to a reference as far as I can tell. Otherwise, memory would leak and the program would break.
 	Student stud(name, classes);
 	srand((unsigned)time(0));
-	stud.setInfractions(true
-						? rand() % 2 == 0
+	stud.setInfractions(rand() % 2 == 0
+						? true
 						: false);
 	if (passer(stud)) {
-		cout << "You have passed, and are on the honour roll. Congratulations." << endl;
+		cout << "You have passed, and are on the honour roll. Congratulations," << stud.getName() << endl;
 		cout << "Results:" << endl;
 		for (uint i = 0; i < classes.size(); i++) {
 			cout << classes[i].getName() << " " << classes[i].getGrade() << endl;
 		}
-		cout << "Disciplinary Infraction: " << stud.hasInfractions() << endl;
+		int sum = 0;
+		for_each(classes.begin(), classes.end(), [&](Class n) {
+			sum += n.getGrade();
+		});
+		cout << "Average: " << sum / classes.size() << endl;
+		cout << "Disciplinary Infraction: " << (stud.hasInfractions() ? "true" : "false") << endl;
 
 		return 0;
 	}
@@ -117,6 +131,12 @@ int main() {
 		for (uint i = 0; i < classes.size(); i++) {
 			cout << classes[i].getName() << " " << classes[i].getGrade() << endl;
 		}
+		int sum = 0;
+		for_each(classes.begin(), classes.end(), [&](Class n) {
+			sum += n.getGrade();
+		});
+		cout << "Average: " << sum / classes.size() << endl;
+		cout << "Disciplinary Infractions: " << (stud.hasInfractions() ? "true" : "false") << endl;
 		return 0;
 	}
 }

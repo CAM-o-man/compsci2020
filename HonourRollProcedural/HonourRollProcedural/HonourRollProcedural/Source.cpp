@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "GetData.h"
 #include <map>
+#include <algorithm>
 /*
  * Author: Connor McDermid
  * Lab: Honour Roll Procedural
@@ -80,6 +81,10 @@ int main() {
 		cout << "That's not valid." << endl;
 		goto class_input;
 	}
+	if (classnum > 8) {
+		cout << "You can't take more than 8 classes. Lowering number to maximum." << endl;
+		classnum = 8;
+	}
 	cin.ignore();
 	for (uint i = 0; i < classnum; i++) {
 		usrClasses(studclasses);
@@ -87,9 +92,21 @@ int main() {
 	infracs = true ? rand() % 2 == 0 : false; //randomly assigned disciplinary infractions
 	if (passer(studclasses, infracs)) {
 		cout << "Congrats! Welcome to the Honour Roll." << endl;
+		int sum;
+		for_each(studclasses.begin(), studclasses.end(), [&](pair<str, int> x) {
+			sum += x.second;
+		});
+		cout << "Average: " << sum / studclasses.size() << endl;
+		cout << "Disciplinary Infractions: " << (infracs ? "true" : "false") << endl;
 	}
 	else {
 		cout << "Unfortunately, you did not make the honour roll." << endl;
+		int sum;
+		for_each(studclasses.begin(), studclasses.end(), [&](pair<str, int> x) {
+			sum += x.second;
+			});
+		cout << "Average: " << sum / studclasses.size() << endl;
+		cout << "Disciplinary Infractions: " << (infracs ? "true" : "false") << endl;
 	}
 	return 0;
 }
