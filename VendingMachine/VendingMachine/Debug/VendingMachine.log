@@ -1,1 +1,10 @@
-﻿
+﻿  Beverage.cpp
+  Candy.cpp
+  Food.cpp
+  HotDog.cpp
+  Pizza.cpp
+  Popcorn.cpp
+  Source.cpp
+  Generating Code...
+C:\Users\cam-o\source\repos\compsci2020\VendingMachine\VendingMachine\Source.cpp(106): warning C4715: 'commandParser': not all control paths return a value
+  VendingMachine.vcxproj -> C:\Users\cam-o\source\repos\compsci2020\VendingMachine\Debug\VendingMachine.exe
