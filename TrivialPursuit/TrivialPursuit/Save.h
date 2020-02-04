@@ -6,19 +6,23 @@
 class Save
 {
 private:
-	std::fstream playersave;
 
 	bool align();
 
 	inline void checkAlign();
 	
 public:
+
+	std::fstream& playersave;
+
 	std::vector<char> getAnswers();
 
 	std::string getName();
 
 	void writeAns(char);
 
-	Save(std::string);
+	void writeName(std::string);
+
+	Save(std::fstream&);
 };
 

@@ -7,13 +7,10 @@ using namespace std;
 
 typedef unsigned int uint;
 
+Master::Master(ifstream& file) :master_table(file) {} //C++ why is this required
+
 bool Master::isOpen() {
 	return master_table.is_open();
-}
-
-bool Master::open() {
-	master_table.open("master.txt");
-	return (master_table.fail() ? false : true);
 }
 
 string Master::getQuestion(uint questionNum) {
@@ -89,8 +86,4 @@ uint Master::getLines() {
 		index++;
 	}
 	return index;
-}
-
-Master::Master(string masterfile) {
-	master_table.open(masterfile);
 }

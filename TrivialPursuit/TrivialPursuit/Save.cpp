@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-
+Save::Save(fstream &file):playersave(file) {} //aaaaaah why
 
 bool Save::align() {
 	playersave.seekg(std::ios::end);
@@ -36,4 +36,23 @@ vector<char> Save::getAnswers() {
 	}
 
 	return rtrn;
+}
+
+string Save::getName() {
+	playersave.seekg(std::ios::beg);
+
+	string tmp;
+	getline(playersave, tmp);
+
+	return tmp;
+}
+
+void Save::writeName(string name) {
+	playersave.seekg(std::ios::beg);
+	playersave << name << endl;
+}
+
+void Save::writeAns(char ans) {
+	checkAlign();
+	playersave << ans << endl;
 }

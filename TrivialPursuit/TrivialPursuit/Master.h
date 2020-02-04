@@ -13,13 +13,11 @@ typedef unsigned int uint;
 
 class Master {
 private:
-	std::ifstream master_table;
+	std::ifstream& master_table;
 
 	void gotoLine(std::ifstream&, uint);
 public:
 	bool isOpen();
-
-	bool open();
 
 	std::string getQuestion(unsigned int);
 
@@ -35,6 +33,6 @@ public:
 
 	unsigned int getLines();
 
-	Master(std::string);
+	Master(std::ifstream&);
 };
 #endif
