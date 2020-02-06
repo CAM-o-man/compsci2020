@@ -10,6 +10,19 @@
 using namespace std;
 typedef unsigned int uint;
 
+int correct(Master& master, Save& save) {
+	vector<char> right = master.getAllCorrect();
+	vector<char> doubt = save.getBuf();
+	int tally = 0;
+
+	for (uint i = 0; i < doubt.size(); i++) {
+		if (doubt[i] == right[i]) {
+			tally++;
+		}
+	}
+	return tally;
+}
+
 int main() {
 
 	Master master("master.csv"); //init master file
@@ -19,7 +32,7 @@ int main() {
 	cout << "Welcome to TRIVIAL PURSUIT!" << endl;
 	cout << "Let's get started, shall we?" << endl;
 
-	for (int i = 0; i < master.getAllData().size(); i++) {
+	for (uint i = 0; i < master.getAllData().size(); i++) {
 		cout << "Question " << i + 1 << ":" << endl;
 		string tmp = master.getQuestion(i);
 		cout << tmp << endl;
@@ -36,9 +49,17 @@ int main() {
 			i--;
 			continue;
 		}
+		cin.ignore(INT_MAX, '\n'); // if multiple chars were entered, cin would consume them all and questions would be skipped
 		save.bufferAnswer(usr);
-		cout << "Next!" << endl;
 	}
+
 	save.writeBuf();
+	cout << "Now, let's check your score." << endl;
+	float denominator = (float)master.getAllData().size();
+	float numerator = (float)correct(master, save);
+
+	cout << "Your score is " << numerator << " correct out of " << denominator << "." << endl;
+	cout << "That's " << (float)(numerator / denominator) * 100 << " percent." << endl;
+
 
 }

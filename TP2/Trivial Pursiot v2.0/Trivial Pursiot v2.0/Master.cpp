@@ -48,14 +48,7 @@ vector<string> Master::getAnswers(int num) {
 }
 
 char Master::getCorrect(int num) {
-	string line = this->data[num];
-	vector<string> full;
-	string tmp;
-	istringstream iss{ line };
-	while (getline(iss, tmp, '|')) {
-		full.push_back(tmp);
-	}
-	return full.back()[0];
+	return correct[num][0];
 }
 
 vector<char> Master::getAllCorrect() {
