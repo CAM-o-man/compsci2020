@@ -12,6 +12,8 @@ class Master
 private:
 	std::string file;
 	std::vector<std::string> data;
+	std::vector<std::string> questions;
+	std::vector<std::string> answers;
 
 public:
 
@@ -20,13 +22,11 @@ public:
 
 	void readAll();
 
-	void write();
-
 	std::vector<std::string> getAllData();
 
 	std::string getQuestion(int);
 
-	std::string getAnswers(int);
+	std::vector<std::string> getAnswers(int);
 
 	char getCorrect(int);
 
