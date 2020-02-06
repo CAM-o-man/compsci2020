@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\cam-o\source\repos\compsci2020\TP2\Trivial Pursiot v2.0\Trivial Pursiot v2.0\main.cpp(59,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Trivial Pursiot v2.0.vcxproj -> C:\Users\cam-o\source\repos\compsci2020\TP2\Trivial Pursiot v2.0\Debug\Trivial Pursiot v2.0.exe
