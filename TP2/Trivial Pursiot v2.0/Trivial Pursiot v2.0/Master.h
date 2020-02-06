@@ -13,7 +13,8 @@ private:
 	std::string file;
 	std::vector<std::string> data;
 	std::vector<std::string> questions;
-	std::vector<std::string> answers;
+	std::vector<std::vector<std::string>> answers;
+	std::vector<std::string> correct;
 
 public:
 
@@ -31,7 +32,5 @@ public:
 	char getCorrect(int);
 
 	std::vector<char> getAllCorrect();
-
-
 };
 

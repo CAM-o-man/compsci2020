@@ -138,10 +138,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Master.cpp" />
+    <ClCompile Include="Save.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Master.h" />
+    <ClInclude Include="Save.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

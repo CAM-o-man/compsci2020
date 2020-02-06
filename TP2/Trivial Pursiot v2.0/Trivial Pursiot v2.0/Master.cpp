@@ -26,8 +26,10 @@ void Master::readAll() {
 		while (getline(iss, tmp, '|')) {
 			tmpvect.push_back(tmp);
 		}
-		questions.push_back(tmpvect[2]);
-		answers.push_back(tmpvect.back());
+		questions.push_back(tmpvect[1]);
+		vector<string> x{ tmpvect[2], tmpvect[3], tmpvect[4], tmpvect[5] };
+		answers.push_back(x);
+		correct.push_back(tmpvect.back());
 		tmpvect.clear();
 	}
 	return;
@@ -42,22 +44,7 @@ string Master::getQuestion(int num) {
 }
 
 vector<string> Master::getAnswers(int num) {
-	vector<string> rtrn;
-	string line = this->data[num];
-	string tmp;
-	istringstream iss{ line };
-	for (int i = 0; getline(iss, tmp); i++) {
-		if (i > 2) {
-			if (tmp.length > 1) {
-				rtrn.push_back(tmp);
-			}
-			else {
-				continue;
-			}
-		}
-	}
-
-	return rtrn;
+	return answers[num];
 }
 
 char Master::getCorrect(int num) {
