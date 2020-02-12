@@ -1,0 +1,6 @@
+org/mcdermid/Binary.class
+org/mcdermid/Main.class
+org/mcdermid/Hexadecimal.class
+org/mcdermid/BCD.class
+org/mcdermid/Octal.class
+org/mcdermid/Decimal.class
