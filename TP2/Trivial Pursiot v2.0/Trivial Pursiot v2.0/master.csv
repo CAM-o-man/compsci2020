@@ -1,3 +1,5 @@
 4|In what order were the Star Wars movies released?|123456789|123789456|456123789|789456123|c
-4|SampleQuestion|blah|blahblah|blahblahblah|blahblahblahblah|a
-4|SampleQuestion|blahblah|blahblahBlahBlah|blah|blahblahblah|c
+4|What actor plays Palpatine in Star Wars?|Connor McDermid|Ian MacDiarmid|Sir Christopher Lee|Tejas's Dad|b
+4|In which movie is the Death Star blown up?|4|6|8|Both A and B|d
+4|How do you assign value to a void pointer?|free()|malloc()|alloc.h|more void pointers|b
+4|Quelle langue est-ce?|Retreat|Spanish|Romanian|Italian|a
