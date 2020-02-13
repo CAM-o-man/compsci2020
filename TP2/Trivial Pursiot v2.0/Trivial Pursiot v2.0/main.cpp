@@ -1,6 +1,5 @@
 #include "Master.h"
 #include "Save.h"
-#include <stdlib.h>
 #include <string>
 #include <vector>
 #include <iomanip>
