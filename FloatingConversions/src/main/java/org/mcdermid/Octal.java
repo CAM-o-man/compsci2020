@@ -1,6 +1,10 @@
 package org.mcdermid;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Octal {
     final int trueval;
@@ -14,15 +18,18 @@ public class Octal {
     }
 
     public static Octal parseOctal(Decimal d) {
-        int dec = d.getNumber();
-        int[] rems = new int[Integer.toString(dec).length()];
-        for (int i = 0; i < rems.length; i++) {
-            rems[i] = dec % 8;
+        float dec = d.getNumber();
+        ArrayList<Float> rems = new ArrayList<>();
+        int tally = 0;
+        for (int i = 0; dec != 0; i++) {
+            rems.add(dec % 8);
             dec /= 8;
+            tally = i;
         }
         StringBuilder sb = new StringBuilder();
-        for (int i : rems) {
-            sb.append(i);
+        Collections.reverse(rems);
+        for (int i = 0; i <= tally; i++) {
+            sb.append(rems.get(i));
         }
         return new Octal(sb.toString());
     }

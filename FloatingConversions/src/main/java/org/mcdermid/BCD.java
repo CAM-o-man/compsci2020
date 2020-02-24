@@ -10,10 +10,10 @@ public class BCD extends Binary {
         //BCD is individual digits, so it's a little different
         StringBuilder master = new StringBuilder();
         StringBuilder nibble = new StringBuilder("0000");
-        int dec = d.getNumber();
-        int[] digits = new int[Integer.toString(dec).length()];
-        for (int i = 0; i < Integer.toString(dec).length(); i++) {
-            digits[i] = Character.getNumericValue(Integer.toString(dec).charAt(i));
+        float dec = d.getNumber();
+        int[] digits = new int[Float.toString(dec).length()];
+        for (int i = 0; i < Float.toString(dec).length(); i++) {
+            digits[i] = Character.getNumericValue(Float.toString(dec).charAt(i));
         }
         for (int i : digits) {
             do {

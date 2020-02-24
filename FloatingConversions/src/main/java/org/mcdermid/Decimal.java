@@ -1,26 +1,66 @@
 package org.mcdermid;
 
-import org.apache.commons.lang3.ArrayUtils;
+import java.security.InvalidParameterException;
 
 public class Decimal {
-    private final int number;
+    private final float number;
 
     public Decimal(int n) {
         this.number = n;
     }
 
-    public int getNumber() {
+    public float getNumber() {
         return number;
     }
 
     public static Decimal parseDecimal(Binary b) {
-        int fin = 0;
-        byte[] bin = b.getBits();
-        ArrayUtils.reverse(bin);
-        for (int i = 0; i < bin.length; i++) {
-            fin += bin[i] * Math.pow(2, i);
+        int radix = 2;
+        String s = b.getNumber();
+        if (s == null) {
+            throw new NumberFormatException("null");
+        } else {
+            boolean negative = false;
+            int i = 0;
+            int len = s.length();
+            int limit = -2147483647;
+            if (len <= 0) {
+                throw new NumberFormatException("Length 0");
+            } else {
+                char firstChar = s.charAt(0);
+                if (firstChar < '0') {
+                    if (firstChar == '-') {
+                        negative = true;
+                        limit = -2147483648;
+                    } else if (firstChar != '+') {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    if (len == 1) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    ++i;
+                }
+
+                @SuppressWarnings("SpellCheckingInspection") int multmin = limit / radix;
+
+                int result;
+                int digit;
+                for(result = 0; i < len; result -= digit) {
+                    digit = Character.digit(s.charAt(i++), radix); //wait
+                    if (digit < 0 || result < multmin) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    result *= radix;
+                    if (result < limit + digit) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+                }
+
+                return new Decimal(negative ? result : -result);
+            }
         }
-        return new Decimal(fin);
     }
 
     public static Decimal parseDecimal(BCD b) {
@@ -32,58 +72,114 @@ public class Decimal {
             localrep = "0" + localrep; //prepend zeroes until can be divided into nibbles
         }
         for (int i = 0; i < localrep.length(); i += 4) {
-            int x = (int) (Character.getNumericValue(localrep.charAt(i)) * Math.pow(2, 8));
-            x += Character.getNumericValue(localrep.charAt(i + 1)) * Math.pow(2, 4);
-            x += Character.getNumericValue(localrep.charAt(i + 2)) * Math.pow(2, 2);
-            x += Character.getNumericValue(localrep.charAt(i + 3)) * Math.pow(2, 1);
+            int x =  Character.getNumericValue(localrep.charAt(i)) * 8;
+            x += Character.getNumericValue(localrep.charAt(i + 1)) * 4;
+            x += Character.getNumericValue(localrep.charAt(i + 2)) * 2;
+            x += Character.getNumericValue(localrep.charAt(i + 3)) * 1;
             stringBuilder.append(x);
         }
         fin = Integer.parseInt(stringBuilder.toString());
         return new Decimal(fin);
     }
 
-    public static Decimal parseDecimal(Hexadecimal h) {
-        int fin = 0;
-        StringBuilder num = new StringBuilder();
-        num.append(h.val);
-        num.reverse();
-        for (char c : num.toString().toUpperCase().toCharArray()) {
-            if (Character.toString(c).matches("[a-zA-Z]")) {
-                switch(Character.toString(c).toUpperCase().toCharArray()[0]) {
-                    case 'A':
-                        fin += 10;
-                        break;
-                    case 'B':
-                        fin += 11;
-                        break;
-                    case 'C':
-                        fin += 12;
-                        break;
-                    case 'D':
-                        fin += 13;
-                        break;
-                    case 'E':
-                        fin += 14;
-                        break;
-                    case 'F':
-                        fin += 15;
-                        break;
-                    default: break;
-                }
+    public static Decimal parseDecimal(Octal o) {
+        int radix = 8;
+        String s = o.val;
+        if (s == null) {
+            throw new NumberFormatException("null");
+        } else {
+            boolean negative = false;
+            int i = 0;
+            int len = s.length();
+            int limit = -2147483647;
+            if (len <= 0) {
+                throw new NumberFormatException("Length 0");
             } else {
-                fin += Character.getNumericValue(c);
+                char firstChar = s.charAt(0);
+                if (firstChar < '0') {
+                    if (firstChar == '-') {
+                        negative = true;
+                        limit = -2147483648;
+                    } else if (firstChar != '+') {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    if (len == 1) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    ++i;
+                }
+
+                @SuppressWarnings("SpellCheckingInspection") int multmin = limit / radix;
+
+                int result;
+                int digit;
+                for(result = 0; i < len; result -= digit) {
+                    digit = Character.digit(s.charAt(i++), radix); //wait
+                    if (digit < 0 || result < multmin) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    result *= radix;
+                    if (result < limit + digit) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+                }
+
+                return new Decimal(negative ? result : -result);
             }
         }
-        return new Decimal(fin);
     }
 
-    public static Decimal parseDecimal(Octal o) {
-        int fin = 0;
-        int x;
-        for (int i = 0; i < o.val.length(); i++) {
-            fin += (int) (Character.getNumericValue(o.val.charAt(i)) * Math.pow(8, i));
+    public static Decimal parseDecimal(Hexadecimal h) {
+        int radix = 16;
+        String s = h.val;
+        if (s == null) {
+            throw new NumberFormatException("null");
+        } else {
+            boolean negative = false;
+            int i = 0;
+            int len = s.length();
+            int limit = -2147483647;
+            if (len <= 0) {
+                throw new NumberFormatException("Length 0");
+            } else {
+                char firstChar = s.charAt(0);
+                if (firstChar < '0') {
+                    if (firstChar == '-') {
+                        negative = true;
+                        limit = -2147483648;
+                    } else if (firstChar != '+') {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    if (len == 1) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    ++i;
+                }
+
+                @SuppressWarnings("SpellCheckingInspection") int multmin = limit / radix;
+
+                int result;
+                int digit;
+                for(result = 0; i < len; result -= digit) {
+                    digit = Character.digit(s.charAt(i++), radix); //wait
+                    if (digit < 0 || result < multmin) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+
+                    result *= radix;
+                    if (result < limit + digit) {
+                        throw new InvalidParameterException("Number not valid.");
+                    }
+                }
+
+                return new Decimal(negative ? result : -result);
+            }
         }
-        return new Decimal(fin);
     }
 }
 
