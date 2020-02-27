@@ -54,7 +54,7 @@ int main() {
 		cin.ignore(INT_MAX, '\n');
 		goto redo_key;
 	}
-	cout << (binary_search(begin(testarr), end(testarr), key) ? "Your key is in the array." : "Your key is not in the array.") << endl;
+	cout << ((binary_find(begin(testarr), end(testarr), key) != end(testarr)) ? "Your key is in the array." : "Your key is not in the array.") << endl;
 
 	return 0;
 	
