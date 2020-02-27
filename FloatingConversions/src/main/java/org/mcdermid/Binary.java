@@ -1,5 +1,7 @@
 package org.mcdermid;
 
+import java.util.ArrayList;
+
 public class Binary {
     private final String number;
     private final byte[] bytenum;
@@ -22,14 +24,14 @@ public class Binary {
     }
 
     public static Binary parseBinary(Decimal d) {
-        int dec = d.getNumber();
-        int[] rems = new int[Integer.toString(dec).length()];
-        for (int i = 0; i < rems.length; i++) {
-            rems[i] = dec % 2;
+        float dec = d.getNumber();
+        ArrayList<Float> rems = new ArrayList<>();
+        for (int i = 0; dec > 0; i++) {
+            rems.add(dec % 2);
             dec /= 2;
         }
         StringBuilder sb = new StringBuilder();
-        for (int i : rems) {
+        for (float i : rems) {
             sb.append(i);
         }
         return new Binary(sb.toString());

@@ -4,6 +4,8 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.MalformedParametersException;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Hexadecimal {
     final int trueval;
@@ -11,8 +13,10 @@ public class Hexadecimal {
     final byte[] bits;
 
     public Hexadecimal(String val) {
-        if (!val.matches("0-9a-fA-F")) {
-            throw new MalformedParametersException("That's *not* properly formatted hexadecimal.");
+        for (char c : val.toCharArray()) {
+            if (!Character.toString(c).matches("^[0-9a-fA-F]$")) {
+                throw new MalformedParametersException("Not a valid hexadecimal number.");
+            }
         }
         this.val = val;
         this.trueval = Integer.parseInt(val, 16);
@@ -20,16 +24,30 @@ public class Hexadecimal {
     }
 
     public static Hexadecimal parseHex(Decimal d) {
-        int dec = d.getNumber();
-        int[] rems = new int[Integer.toString(dec).length()];
-        for (int i = 0; i < Integer.toString(dec).length(); i++) {
-            rems[i] = dec % 16;
+        int dec = (int) d.getNumber();
+        ArrayList<Integer> rems = new ArrayList<>();
+        for (int i = 0; dec > 0; i++) {
+            rems.add(dec % 16);
             dec /= 16;
         }
-        ArrayUtils.reverse(rems);
+        Collections.reverse(rems);
         StringBuilder sB = new StringBuilder();
         for (int x : rems) {
-            sB.append(x);
+            if (x == 10) {
+                sB.append('A');
+            } else if (x == 11) {
+                sB.append('B');
+            } else if (x == 12) {
+                sB.append('C');
+            } else if (x == 13) {
+                sB.append('D');
+            } else if (x == 14) {
+                sB.append('E');
+            } else if (x == 15) {
+                sB.append('F');
+            } else {
+                sB.append(x);
+            }
         }
         return new Hexadecimal(sB.toString());
     }
