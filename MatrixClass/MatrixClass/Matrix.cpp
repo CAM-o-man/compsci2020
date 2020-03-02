@@ -1,6 +1,9 @@
+/*
 #include "Matrix.h"
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <iomanip>
 
 using namespace std;
 typedef unsigned int uint;
@@ -48,3 +51,21 @@ void Matrix<T>::addFilledRow(T* x) {
 	vector<T> vals(begin(x), end(x)); //range constructor
 	this->container.push_back(vals);
 }
+
+template<typename T>
+void Matrix<T>::addValue(T val) {
+	this->container.back().push_back(T); //vector<>::back() acquires a reference to the final element of the vector.
+}
+
+template<typename T>
+ostream& operator<< <> (ostream& out, Matrix<T>& in) {
+	for (vector<T> row : in.container) {
+		for (T val : row) {
+			cout << val << ", ";
+		}
+		cout << endl;
+	}
+
+	return out;
+}
+*/
