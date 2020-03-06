@@ -24,7 +24,7 @@ struct rocketType {
 	struct rocketStats stats;
 };
 
-bool operator>(struct rocketType& lhs, struct rocketType& rhs) {
+bool operator>(struct rocketType const& lhs, struct rocketType const& rhs) {
 	return lhs.stats.gross > rhs.stats.gross;
 }
 
