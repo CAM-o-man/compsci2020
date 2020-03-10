@@ -62,7 +62,7 @@ public:
 	friend std::ostream& operator<< (std::ostream& out, const Matrix<T>& in) {
 		for (vector<T> row : in.container) {
 			for (T val : row) {
-				cout << val << " ";
+				cout << "[" << val << "]" << " ";
 			}
 			cout << endl;
 		}

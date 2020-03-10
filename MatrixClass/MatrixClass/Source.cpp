@@ -18,13 +18,9 @@ int main() {
 	}
 
 	mat.addFilledRow(arr);
-
 	mat.addRow();
-
 	mat.addValue(7);
-	mat.addValue(7);
-	mat.addValue(14);
-	mat.addValueAtCoordinates(1, 2, 3);
+	mat.addValue(11);
 
 	cout << mat;
 
