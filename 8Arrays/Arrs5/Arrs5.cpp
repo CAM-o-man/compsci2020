@@ -48,7 +48,7 @@ void ExchangeSort(int* arr) {
 template<class Iter, class T> Iter binary_find(Iter begin, Iter end, T val) {
 	Iter i = lower_bound(begin, end, val);
 
-	if (!!= end && !(val < *i)) {
+	if (i != end && !(val < *i)) {
 		return i;
 	}
 	else {
@@ -59,7 +59,7 @@ template<class Iter, class T> Iter binary_find(Iter begin, Iter end, T val) {
 int main() {
 	int randnums[50];
 
-	for (uint i = 0; i < sizeof(randnums); i++) {
+	for (uint i = 0; i < 50; i++) {
 		randnums[i] = rand() % 100;
 	}
 

@@ -22,8 +22,8 @@ template<class Iter, class T> Iter binary_find(Iter begin, Iter end, T val) {
 	}
 }
 
-void printarr(string* arr) {
-	for (uint i = 0; i < arr->length; i++) {
+void printarr(string* arr, uint length) {
+	for (uint i = 0; i < length; i++) {
 		cout << arr[i] << endl;
 	}
 }
@@ -65,9 +65,9 @@ int main() {
 		"666-666-6666", "999-999-9999", "1-800-222-4444", "1-800-420-6969", "0x0: no phone number"
 	};
 
-	printarr(studnames);
-	printarr(addresses);
-	printarr(phones);
+	printarr(studnames, 5);
+	printarr(addresses, 5);
+	printarr(phones, 5);
 
 	cout << studnames[2] << " " << addresses[2] << " " << phones[2] << endl;
 
