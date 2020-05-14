@@ -1,3 +1,10 @@
+/*
+Name: Connor McDermid
+Date: 2020-05-14
+Lab: 9.0 Structures
+Extra: Quicksort, seekg()
+*/
+
 #include "supporter.h"
 #include <iostream>
 #include <string>
@@ -43,6 +50,10 @@ bool operator<(struct Supporter& l, struct Supporter& r) {
 	else {
 		return l.amount < r.amount;
 	}
+}
+
+bool operator==(struct Supporter& l, struct Supporter& r) {
+	return l.amount == r.amount;
 }
 
 string formatPhone(string& phone) {
@@ -130,13 +141,41 @@ int main() {
 	for (uint i = 0; i < sups.size(); i++) { //foreach didn't work for some reason. Something weird with scopes and references, no doubt.
 		sups[i].phone = formatPhone(sups[i].phone);
 	}
+
+	//find average donation amt
+	double avg = average(sups);
 	//print supporters
-	cout << "And the award for \"Most Generous Donor\" goes to:" << endl;
-	printSupporter(sups[0]);
+	if (sups[0] == sups[1] && sups[0] == sups[2]) {
+		cout << "And the award for \"Most Generous Donors\" goes to:" << endl;
+		cout << "---------------------------------------------------" << endl;
+		printSupporter(sups[0]);
+		printSupporter(sups[1]);
+		printSupporter(sups[2]);
+		sups.erase(sups.begin());
+		sups.erase(sups.begin()); //each new element, on the previous element's deletion, becomes the new first element
+		sups.erase(sups.begin());
+		cout << "---------------------------------------------------" << endl;
+	}
+	else if (sups[0] == sups[1]) {
+		cout << "And the award for \"Most Generous Donors\" goes to:" << endl;
+		cout << "---------------------------------------------------" << endl;
+		printSupporter(sups[0]);
+		printSupporter(sups[1]);
+		sups.erase(sups.begin());
+		sups.erase(sups.begin());
+		cout << "---------------------------------------------------" << endl;
+	}
+	else {
+		cout << "And the award for \"Most Generous Donor\" goes to:" << endl;
+		cout << "---------------------------------------------------" << endl;
+		printSupporter(sups[0]);
+		sups.erase(sups.begin());
+		cout << "---------------------------------------------------" << endl;
+	}
 	cout << "Other donors are:" << endl;
 	for (uint i = 1; i < sups.size(); i++) {
 		printSupporter(sups[i]);
 	}
-	cout << "Our average donor gave " << average(sups) << endl;
+	cout << "Our average donor gave " << avg << endl; //had to use stored average since elements have been deleted
 
 }
